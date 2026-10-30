@@ -22,7 +22,7 @@
     </div>
     <div class="row my-2 align-center">
       <label class="col-12 col-m-3" for="productDescription">Descripción</label>
-      <teaxtarea class="col-12 col-m-9"  {{~readonly}} name="productDescription" id="productDescription" placehoder="Descripción del Producto">{{productDescription}}</teaxtarea>
+      <textarea class="col-12 col-m-9"  {{~readonly}} name="productDescription" id="productDescription" placehoder="Descripción del Producto">{{productDescription}}</textarea>
       {{if productDescription_error}}
       <div class="col-12 col-m-9 offset-m-3 error">
         {{productDescription_error}}
@@ -49,7 +49,7 @@
     </div>
     <div class="row my-2 align-center">
       <label class="col-12 col-m-3" for="productStatus">Estado</label>
-      <select name="productStatus" id="productStatus" class="col-12 col-m-9" {{if ~readonly}} readonly disabled {{endif ~readonly}}>
+      <select name="productStatus" id="productStatus" class="col-12 col-m-9" {{if ~readonly}} readonly  {{endif ~readonly}}>
         <option value="ACT" {{productStatus_act}}>Activo</option>
         <option value="INA" {{productStatus_ina}}>Inactivo</option>
       </select>

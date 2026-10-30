@@ -29,13 +29,17 @@
           {{ifnot OrderByProductId}}
           <a href="index.php?page=Products_Products&orderBy=productId&orderDescending=0">Id <i class="fas fa-sort"></i></a>
           {{endifnot OrderByProductId}}
+          {{ifnot OrderByProductName}}
+          <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=0">Id <i class="fas fa-sort"></i></a>
+          {{endifnot OrderByProductName}}
           {{if OrderProductIdDesc}}
           <a href="index.php?page=Products_Products&orderBy=clear&orderDescending=0">Id <i class="fas fa-sort-down"></i></a>
           {{endif OrderProductIdDesc}}
-          {{if OrderProductId}}
+          
           <a href="index.php?page=Products_Products&orderBy=productId&orderDescending=1">Id <i class="fas fa-sort-up"></i></a>
-          {{endif OrderProductId}}
+          
         </th>
+        <th>Nombre</th>
         <th class="left">
           {{ifnot OrderByProductName}}
           <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=0">Nombre <i class="fas fa-sort"></i></a>
@@ -46,6 +50,7 @@
           {{if OrderProductName}}
           <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=1">Nombre <i class="fas fa-sort-up"></i></a>
           {{endif OrderProductName}}
+          Descripción
         </th>
         <th>
           {{ifnot OrderByProductPrice}}
@@ -57,6 +62,7 @@
           {{if OrderProductPrice}}
           <a href="index.php?page=Products_Products&orderBy=productPrice&orderDescending=1">Precio <i class="fas fa-sort-up"></i></a>
           {{endif OrderProductPrice}}
+          Precio
         </th>
         <th>Estado</th>
         <th><a href="index.php?page=Products-Product&mode=INS">Nuevo</a></th>
@@ -66,7 +72,9 @@
       {{foreach products}}
       <tr>
         <td>{{productId}}</td>
-        <td> <a class="link" href="index.php?page=Products-Product&mode=DSP&productId={{productId}}">{{productDescription}}</a>
+        <td>{{productName}}</td>
+        <td>
+          <a class="link" href="index.php?page=Products-Product&mode=DSP&productId={{productId}}">{{productDescription}}</a>
         </td>
         <td class="right">
           {{productPrice}}
