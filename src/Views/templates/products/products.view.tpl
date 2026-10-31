@@ -26,46 +26,59 @@
     <thead>
       <tr>
         <th>
-          {{ifnot OrderByProductId}}
+          {{ifnot orderBy}}
           <a href="index.php?page=Products_Products&orderBy=productId&orderDescending=0">Id <i class="fas fa-sort"></i></a>
-          {{endifnot OrderByProductId}}
-          {{ifnot OrderByProductName}}
-          <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=0">Id <i class="fas fa-sort"></i></a>
-          {{endifnot OrderByProductName}}
+          {{endifnot orderBy}}
+          {{if OrderByProductName}}
+          <a href="index.php?page=Products_Products&orderBy=productId&orderDescending=0">Id <i class="fas fa-sort"></i></a>
+          {{endif OrderByProductName}}
+          {{if OrderByProductPrice}}
+          <a href="index.php?page=Products_Products&orderBy=productId&orderDescending=0">Id <i class="fas fa-sort"></i></a>
+          {{endif OrderByProductPrice}}
           {{if OrderProductIdDesc}}
           <a href="index.php?page=Products_Products&orderBy=clear&orderDescending=0">Id <i class="fas fa-sort-down"></i></a>
           {{endif OrderProductIdDesc}}
-          
+          {{if OrderProductId}}
           <a href="index.php?page=Products_Products&orderBy=productId&orderDescending=1">Id <i class="fas fa-sort-up"></i></a>
-          
+          {{endif OrderProductId}}
         </th>
-        <th>Nombre</th>
         <th class="left">
-          {{ifnot OrderByProductName}}
+          {{ifnot orderBy}}
           <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=0">Nombre <i class="fas fa-sort"></i></a>
-          {{endifnot OrderByProductName}}
+          {{endifnot orderBy}}
+          {{if OrderByProductId}}
+          <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=0">Nombre <i class="fas fa-sort"></i></a>
+          {{endif OrderByProductId}}
+          {{if OrderByProductPrice}}
+          <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=0">Nombre <i class="fas fa-sort"></i></a>
+          {{endif OrderByProductPrice}}
           {{if OrderProductNameDesc}}
           <a href="index.php?page=Products_Products&orderBy=clear&orderDescending=0">Nombre <i class="fas fa-sort-down"></i></a>
           {{endif OrderProductNameDesc}}
           {{if OrderProductName}}
           <a href="index.php?page=Products_Products&orderBy=productName&orderDescending=1">Nombre <i class="fas fa-sort-up"></i></a>
           {{endif OrderProductName}}
-          Descripción
         </th>
+        <th class="left">Descripción</th>
         <th>
-          {{ifnot OrderByProductPrice}}
+          {{ifnot orderBy}}
           <a href="index.php?page=Products_Products&orderBy=productPrice&orderDescending=0">Precio <i class="fas fa-sort"></i></a>
-          {{endifnot OrderByProductPrice}}
+          {{endifnot orderBy}}
+          {{if OrderByProductId}}
+          <a href="index.php?page=Products_Products&orderBy=productPrice&orderDescending=0">Precio <i class="fas fa-sort"></i></a>
+          {{endif OrderByProductId}}
+          {{if OrderByProductName}}
+          <a href="index.php?page=Products_Products&orderBy=productPrice&orderDescending=0">Precio <i class="fas fa-sort"></i></a>
+          {{endif OrderByProductName}}
           {{if OrderProductPriceDesc}}
           <a href="index.php?page=Products_Products&orderBy=clear&orderDescending=0">Precio <i class="fas fa-sort-down"></i></a>
           {{endif OrderProductPriceDesc}}
           {{if OrderProductPrice}}
           <a href="index.php?page=Products_Products&orderBy=productPrice&orderDescending=1">Precio <i class="fas fa-sort-up"></i></a>
           {{endif OrderProductPrice}}
-          Precio
         </th>
         <th>Estado</th>
-        <th><a href="index.php?page=Products-Product&mode=INS">Nuevo</a></th>
+        <th><a href="index.php?page=Products_Product&mode=INS">Nuevo</a></th>
       </tr>
     </thead>
     <tbody>
